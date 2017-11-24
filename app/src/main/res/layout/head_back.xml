@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
+    android:layout_height="45dp">
+    <ImageButton
+        android:id="@+id/head_back"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:background="@null"
+        android:src="@drawable/back"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"/>
+    <TextView
+        android:id="@+id/head_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:text="免责声明"
+        android:gravity="center_vertical"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
+</RelativeLayout>

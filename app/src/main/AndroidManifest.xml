@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hooha.maidai.chat">
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="23" />
+
+    <permission
+        android:name="com.hooha.maidai.chat.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <!-- Required -->
+    <uses-permission android:name="com.hooha.maidai.chat.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <application
+        android:name="com.hooha.maidai.chat.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_app"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.HomeActivity" />
+        <activity
+            android:name=".activity.ChatActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activity.SearchFriendActivity" />
+        <activity android:name=".activity.AddFriendActivity" />
+        <activity
+            android:name=".activity.ProfileActivity"
+            android:label="好友资料"
+            android:launchMode="singleTask" />
+        <activity android:name=".activity.ManageFriendGroupActivity" />
+        <activity android:name=".activity.CreateGroupActivity" />
+        <activity
+            android:name=".activity.GroupProfileActivity"
+            android:launchMode="singleTask" />
+
+        <!-- 消息收发service -->
+        <service
+            android:name="com.tencent.qalsdk.service.QalService"
+            android:exported="false"
+            android:process=":QALSERVICE" />
+        <service
+            android:name="com.tencent.qalsdk.service.QalAssistService"
+            android:exported="false"
+            android:process=":QALSERVICE" />
+        <!-- 离线消息广播接收器 -->
+        <receiver
+            android:name="com.tencent.qalsdk.QALBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.tencent.qalsdk.broadcast.qal" />
+            </intent-filter>
+        </receiver>
+        <!-- 系统消息广播接收器 -->
+        <receiver
+            android:name="com.tencent.qalsdk.core.NetConnInfoCenter"
+            android:process=":QALSERVICE">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.TIME_SET" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".activity.ImageViewActivity" />
+        <activity android:name=".activity.EditActivity" />
+        <activity android:name=".activity.SearchGroupActivity" />
+        <activity android:name=".activity.ApplyGroupActivity" />
+        <activity android:name=".activity.GroupManageMessageActivity" />
+        <activity android:name=".activity.FriendshipManageMessageActivity" />
+        <activity android:name=".activity.GroupListActivity" />
+        <activity android:name=".activity.ChooseFriendActivity" />
+        <activity android:name=".activity.GroupMemberActivity" />
+        <activity android:name=".activity.uploadpicActivity" />
+        <activity
+            android:name=".view.DialogActivity"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity android:name=".activity.GroupMemberProfileActivity" />
+        <activity android:name=".activity.FriendshipHandleActivity" />
+        <activity android:name=".activity.AboutActivity" />
+        <activity android:name=".activity.BlackListActivity"></activity>
+        <activity android:name=".activity.ImagePreviewActivity"></activity>
+        <activity
+            android:name=".activity.SettingUserInfoActivity"
+            android:label="设置个人信息" />
+        <activity
+            android:name=".activity.PostActivity"
+            android:label="发送段子" />
+        <activity
+            android:name=".activity.duanziActivity"
+            android:label="发送段子" />
+        <activity
+            android:name=".activity.DeclareActivity"
+            android:label="免责声明" />
+        <activity
+            android:name=".activity.PersonalSettingsActivity"
+            android:label="个人设置" />
+        <activity
+            android:name=".activity.SettingActivity"
+            android:label="系统设置" />
+        <activity
+            android:name=".activity.MyHomePageActivity"
+            android:label="我的主页" />
+        <activity
+            android:name=".activity.ImageGridActivity"
+            android:label="上传图片" />
+        <activity
+            android:name=".activity.PublishedActivity"
+            android:label="上传图片" />
+        <activity
+            android:name=".activity.PhotoActivity"
+            android:label="上传图片" />
+        <activity
+            android:name=".activity.TestPicActivity"
+            android:label="上传图片" />
+        <activity
+            android:name=".activity.MovieActivity"
+            android:label="上传视频" />
+
+        <activity
+            android:name=".activity.Movie_playActivity"
+            android:label="上传视频" />
+
+        <activity
+            android:name=".activity.PostvideoActivity"
+            android:label="上传视频" />
+
+        <activity
+            android:name=".activity.VideoRead"
+            android:label="上传视频" />
+
+        <activity
+            android:name=".activity.LiveActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:label="直播界面"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".activity.PublishLiveActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:label="开始直播界面"
+            android:screenOrientation="portrait" />
+        <!-- 避免部分机器调用摄像头时自动横竖屏切换造成Activity重建 -->
+        <activity
+            android:name=".activity.MyFollowActivity"
+            android:label="我的关注" />
+        <activity
+            android:name=".activity.RoomListActivity"
+            android:label="房间列表" />
+        <activity
+            android:name=".activity.SearchAddFriendActivity"
+            android:label="添加呆友" />
+
+        <activity
+            android:name=".activity.MyActivity"
+            android:label="我的" />
+
+        <activity
+            android:name=".activity.InfoActivity"
+            android:label="个人主页" />
+        <activity
+            android:name=".activity.CommentActivity"
+            android:label="评论页" />
+        <activity
+            android:name=".activity.VideoShowActivity"
+            android:label="视频播放页" />
+        <activity
+            android:name=".activity.ImageShowActivity"
+            android:label="图片展示页" />
+        <activity
+            android:name=".activity.FeedbackActivity"
+            android:label="意见反馈" />
+        <!--TLS Qal 一些服务 -->
+        <service
+            android:name="com.tencent.qalsdk.service.QalService"
+            android:exported="false"
+            android:process=":QALSERVICE" />
+
+        <receiver
+            android:name="com.tencent.qalsdk.QALBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.tencent.qalsdk.broadcast.qal" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.tencent.qalsdk.core.NetConnInfoCenter"
+            android:process=":QALSERVICE">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.TIME_SET" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

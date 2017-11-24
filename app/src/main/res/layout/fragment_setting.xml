@@ -1,0 +1,237 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context="com.hooha.maidai.timchat.ui.SettingFragment">
+
+    <com.hooha.maidai.chat.view.TemplateTitle
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleText="@string/home_setting_tab" />
+    <View android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line"
+        android:layout_marginTop="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="145dp"
+        android:background="@drawable/bg_avater"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <com.hooha.maidai.chat.view.CircleImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/head_me"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/head_me"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp">
+            <TextView
+                android:id="@id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/idtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_gray1"
+                android:layout_marginTop="10dp"
+                android:textSize="14sp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <View android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line" />
+    <com.hooha.maidai.chat.view.LineControllerView
+        android:visibility="gone"
+        android:id="@+id/friendConfirm"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10sp"
+        android:layout_height="wrap_content"
+        app:name="@string/setting_friend_confirm"
+
+        app:content="@string/setting_friend_need_confirm"
+        app:canNav="true"/>
+    <View android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line" />
+    <RelativeLayout
+        android:id="@+id/st_guanzhu"
+        android:background="@color/white"
+        android:layout_marginTop="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:drawableLeft="@drawable/ic_aixin"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_marginLeft="15dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:drawablePadding="5dp"
+            android:text="我的关注"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/mare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/st_homepage"
+        android:background="@color/white"
+        android:layout_marginTop="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:drawableLeft="@drawable/ic_dingwei"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_marginLeft="15dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:drawablePadding="5dp"
+            android:text="我的主页"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/mare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/st_personal"
+        android:background="@color/white"
+        android:layout_marginTop="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:drawableLeft="@drawable/ic_lingdang"
+            android:layout_centerVertical="true"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginLeft="15dp"
+            android:drawablePadding="5dp"
+            android:text="个人设置"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/mare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/st_sys"
+        android:background="@color/white"
+        android:layout_marginTop="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:drawableLeft="@drawable/ic_shezhi"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_marginLeft="15dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:drawablePadding="5dp"
+            android:text="系统设置"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/mare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/st_erweima"
+        android:background="@color/white"
+        android:layout_marginTop="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:drawableLeft="@drawable/ic_erweima"
+
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_marginLeft="15dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:drawablePadding="5dp"
+            android:text="我的二维码"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/mare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <com.hooha.maidai.chat.view.LineControllerView
+        android:visibility="gone"
+        android:id="@+id/nickName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:name="@string/setting_nick_name_change"
+        app:canNav="true"/>
+
+
+
+    <com.hooha.maidai.chat.view.LineControllerView
+        android:id="@+id/blackList"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        app:name="@string/setting_black_list"
+        app:canNav="true"/>
+    <com.hooha.maidai.chat.view.LineControllerView
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        app:name="@string/setting_about"
+        app:isBottom="true"
+        app:canNav="true"/>
+
+
+
+    <TextView
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="18sp"
+        android:background="@drawable/bg_negative_btn"
+        android:textColor="@color/text_btn"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:visibility="gone"
+        android:layout_marginRight="10dp"
+        android:text="@string/setting_logout"/>
+
+</LinearLayout>

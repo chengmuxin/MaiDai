@@ -1,0 +1,3 @@
+include ':app', ':sdk', ':tlslibrary', ':presentation', ':okhttputils', ':libzxing'
+
+include ':library'

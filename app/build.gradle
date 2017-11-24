@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    signingConfigs {
+        release {
+            storeFile file("$System.env.KEYSTORE_PATH")
+            storePassword "$System.env.STOREPASS"
+            keyAlias "$System.env.ALIAS"
+            keyPassword "$System.env.KEYPASS"
+        }
+    }
+
+    packagingOptions {
+        exclude '*.apk'
+    }
+    dexOptions {
+        jumboMode true
+        incremental false
+    }
+    lintOptions {
+        abortOnError false
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileSdkVersion 23
+    buildToolsVersion '26.0.2'
+
+    defaultConfig {
+        applicationId "com.hooha.maidai.chat"
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        ndk {
+            abiFilters 'armeabi'
+        }
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "d58aabcd2eac71c47bdb16b9",
+                JPUSH_CHANNEL : "developer-default",
+        ]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile project(':presentation')
+    compile 'com.android.support:support-v4:23+'
+    compile project(':okhttputils')
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.android.support:design:23.4.0'
+    compile 'cn.jiguang:jpush:2.1.9'
+    compile project(':libzxing')
+//    compile 'cn.jiguang.sdk:jpush:3.0.9'
+    compile project(':library')
+    compile 'org.xutils:xutils:3.3.36'
+}

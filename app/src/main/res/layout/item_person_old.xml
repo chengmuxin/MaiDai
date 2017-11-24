@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/input_setting_old"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="    请在此框输入信息！"
+        android:digits="1234567890"
+        android:singleLine="true"
+        android:inputType="number"
+        android:layout_margin="20dp"/>
+</RelativeLayout>

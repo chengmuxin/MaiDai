@@ -1,0 +1,150 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hooha.maidai.chat.fragment.ContactFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#00b5ff"
+       >
+        <com.hooha.maidai.chat.view.TemplateTitle
+            android:id="@+id/contact_antionbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:moreImg="@drawable/ic_add_more"
+            android:background="#00b5ff"
+            app:titleText="@string/home_contact_tab"/>
+        <ImageView
+            android:id="@+id/fragment_my"
+            android:src="@drawable/me"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/btnNewFriend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/danliao"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:text="新呆友" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnPublicGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/qunliao"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="8dp"
+                android:textSize="14sp"
+                android:text="群聊" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnPrivateGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/tianjiadaiyou"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="8dp"
+                android:textSize="14sp"
+                android:text="添加呆友" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnChatroom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/jiejiuwo"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="8dp"
+                android:textSize="14sp"
+                android:text="@string/chatroom" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line"/>
+
+    <TextView
+        android:id="@+id/goodfriList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        android:background="#ffffff"
+        android:textColor="@color/black"
+     android:textStyle="bold"
+        android:paddingLeft="10dp"
+        android:textSize="17dp"
+        android:gravity="center_vertical"
+        android:text="@string/goodfriList"
+  />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line"/>
+
+    <ExpandableListView
+        android:id="@+id/groupList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
+        android:cacheColorHint="#00000000"
+        android:groupIndicator="@null"
+        android:listSelector="#00000000" />
+</LinearLayout>
